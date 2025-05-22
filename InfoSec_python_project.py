@@ -15,7 +15,7 @@ print("\n")
 pi = 3.14159265
 while True:
     try:
-        user_radius = float(input("Enter the radius of the sphere: "))
+        user_radius = float (input("Enter the radius of the sphere: "))
     except ValueError:
         print("invalid input!")
     break
@@ -74,7 +74,7 @@ while y >= 6:
         y -= 4
         x += 2/y
 
-print(f"x = {x:.4f}")
+print(f"After iteration, The final value of x is,\nx = {x:.4f}")
 print("\n")
 
 """
