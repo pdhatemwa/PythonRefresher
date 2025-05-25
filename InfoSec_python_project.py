@@ -54,11 +54,11 @@ print("\n")
 # whether a character input by a user is uppercase or lower case.
 def letter_case(char):
     if char.isupper():
-        return "The character is uppercase."
+        return "Uppercase detected."
     elif char.islower():
-        return "The character is lowercase."
+        return "Lowercase detected."
     else:
-        return "The input is not a letter."
+        return "You have not entered a letter character."
 
 # Main program
 letter_input = input("Enter a single character: ")
@@ -110,7 +110,6 @@ array.
 
     """
 
-# Initialize an empty list to store the values
 numbers = []
 
 for i in range(1, 6, 1):
@@ -122,9 +121,8 @@ for i in range(1, 6, 1):
         except ValueError:
             print("Invalid input! Kindly try again.")
 
-# Calculate the average
+# Formula for average
 average = sum(numbers) / len(numbers)
 
-# Display the result
-print(f"\nThe values entered are: {numbers}")
+# Results
 print(f"The average of the values is: {average:.4f}")
