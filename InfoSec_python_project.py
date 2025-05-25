@@ -4,26 +4,28 @@ while True:
     try:
         user_input = int(input("Enter any number of days :  "))
         print(f"You entered {user_input} days.\n This is equivalent to {user_input*86400} seconds. ")
-    except ValueError:
+    except ValueError :
         print("Invalid input!")
         break
     break
 print("\n")
+
 # Question 2 : Write a program that asks a user to input the radius then the program
 # calculates the volume of a sphere (the formula for the volume is 4/3πr^3). 
 # Use the exponential operator in python to compute (r3).
-pi = 3.14159265
+pi = 3.14159265358979
 while True:
     try:
-        user_radius = float (input("Enter the radius of the sphere: "))
+        user_radius = float(input("Please enter the radius of the sphere: "))
     except ValueError:
         print("invalid input!")
     break
 sphere_volume = (4/3)*pi*(user_radius**3)
-print(f"The volume of the sphere with radius, {user_radius} is : {sphere_volume:.2f}")
+print(f"The volume of the Sphere with radius, {user_radius} is : {sphere_volume:.2f}")
 print("\n")
 
-# Question 3 : Using functions, write a program to compute 
+# Question 3 : Using functions, 
+# write a program to compute 
 # the area and perimeter of a square. The program should ask the 
 # user to enter a number
 # DAT 2102 [April - July 2025] Semester Project 
@@ -35,19 +37,38 @@ while True:
     try:
         user_side = float(input("Enter square side length (cm): "))
     except ValueError:
-        print("Invalid input!")
+        print("Invalid input! ")
         break
     break
 print("\n")
 perimeter = user_side * 4
 area = user_side ** 2
+
 print(f"Ah! your square of choice has a length of {user_side} cm.")
 print(f"That would mean its perimeter is: {perimeter:.2f} cm\nAnd its Area is : {area:.2f} cm².")
 print("\n")
 
 
 
-# Question 4 : Write a program using functions that determines whether a character input by a user is uppercase or lower case
+# Question 4 : Write a program using functions that determines 
+# whether a character input by a user is uppercase or lower case.
+def letter_case(char):
+    if char.isupper():
+        return "The character is uppercase."
+    elif char.islower():
+        return "The character is lowercase."
+    else:
+        return "The input is not a letter."
+
+# Main program
+letter_input = input("Enter a single character: ")
+
+if len(letter_input) == 1:
+    result = letter_case(letter_input)
+    print(result)
+else:
+    print("Invalid input! Enter only one character.")
+
 
 """
     Question 5 :
@@ -65,17 +86,18 @@ UNTIL
 y IS LESS THAN 6
 DISPLAY x
 END
-    """
+"""
 
 x = 0
 y = 20
 
 while y >= 6:
-        y -= 4
-        x += 2/y
+    y -= 4
+    x += 2/y
 
-print(f"After iteration, The final value of x is,\nx = {x:.4f}")
+print(f"After iterating as instructed, \nx = {x:.4f}")
 print("\n")
+
 
 """
     Question 6 : 
@@ -87,3 +109,22 @@ ii. Calculates and displays the average of the values input into the
 array.
 
     """
+
+# Initialize an empty list to store the values
+numbers = []
+
+for i in range(1, 6, 1):
+    while True:
+        try:
+            num = float(input(f"Enter the {i} st/nd/rd/th number: "))
+            numbers.append(num)
+            break
+        except ValueError:
+            print("Invalid input! Kindly try again.")
+
+# Calculate the average
+average = sum(numbers) / len(numbers)
+
+# Display the result
+print(f"\nThe values entered are: {numbers}")
+print(f"The average of the values is: {average:.4f}")
